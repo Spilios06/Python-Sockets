@@ -19,8 +19,30 @@ cd Python-Sockets
 pip install -r requirements.txt
 ```
 
+```bash
+nano config.txt
+```
+Replace 'server-ip' with your server ip address and save it
+
 ## Usage
 
+### Server-side
+
+```bash
+python3 server.py
+```
+
+Wait for connection, after the client has connected you may run any command you want on the client machine, to quit type:
+
+```bash
+q
+```
+
+### Client-Side
+
+```bash
+python3 bot.py
+```
 
 ## License
 
